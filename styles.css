@@ -573,6 +573,47 @@ body {
 /* ======================
    EQUIPE
    ====================== */
+/* ======================
+   TÍTULO DA EQUIPE
+   ====================== */
+.team-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 2rem 0 3rem;
+  color: white;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(to right, #be00ff, #ffffff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 15px rgba(190, 0, 255, 0.4);
+  padding: 0 1.5rem;
+}
+
+/* Efeito opcional de sublinhado decorativo */
+.team-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #be00ff, transparent);
+  box-shadow: 0 0 10px rgba(190, 0, 255, 0.6);
+}
+
+/* Versão mobile */
+@media (max-width: 768px) {
+  .team-title {
+    font-size: 2rem;
+    margin: 1.5rem 0 2.5rem;
+  }
+}
+
+
 /* Estilos para a seção de biografia */
 .member-avatar {
   width: 120px;
@@ -637,7 +678,7 @@ body {
   position: relative;
   overflow: hidden;
   max-width: 300px;
-  margin: 0 auto;
+  margin: 0 auto 3rem; /* ADICIONE ESTA MARGEM INFERIOR */
 }
 
 .team-member::before {
