@@ -466,14 +466,15 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start; /* Alinhar conteúdo no topo */
-    margin-top: 15%;
-    margin-left: -20%;
+    margin-top: 8%;
+    margin-left: -15%;
+    
   }
 
   .logo-gradient {
     font-size: 6.5rem;
     margin-top: 5%; /* Reduzir margem superior */
-    transform: scale(1.5); /* Subir 20% */
+    transform: scale(1.1); /* Subir 20% */
     
   }
 
@@ -493,21 +494,19 @@ body {
   }
 
   .slogan {
-    margin-left: 17%;
+    margin-left: 13%;
     font-size: 2rem;
     max-width: 700px;
     text-align: center;
-
-
   }
 
   .tech-badge {
-    margin-left: 17%;
+    margin-left: 13%;
     transform: none;
   }
 
 .scroll-down-arrow {
-  left: 57%;
+  left: 55%;
   transform: translateX(-50%) translateY(50%); /* Adicionado translateY */
   position: absolute;
   bottom: -55%; /* Ajuste este valor conforme necessário */
