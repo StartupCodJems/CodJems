@@ -10,7 +10,7 @@
 }
 
 body {
-  background-color: #f8f9fa;
+  background-color: black;
   color: #333;
 }
 
@@ -381,6 +381,141 @@ body {
 }
 
 /* ======================
+   LOGO E MARCA - DESKTOP
+   ====================== */
+@media (min-width: 768px) {
+  #inicio {
+    padding: 4rem 1rem;
+    min-height: calc(100vh - 80px);
+    margin-top: 80px;
+  }
+
+  .brand-container {
+    text-align: left;
+    margin: 0;
+    padding-top: 0;
+    position: relative;
+  }
+
+  .logo-gradient {
+    font-size: 5.5rem;
+    margin-top: 0;
+    padding-top: 0;
+    line-height: 1;
+    position: relative;
+    z-index: 2;
+    padding-left: 160px; /* Espaço para a logo */
+  }
+
+  .logo-overlay {
+    left: 0;
+    transform: translateY(-50%);
+    height: 1.6em;
+    width: auto;
+    animation: logo-float 2.8s ease-in-out infinite alternate;
+  }
+
+  @keyframes logo-float {
+    0%, 100% {
+      transform: translateY(-50%) rotate(-4deg) scale(1);
+    }
+    50% {
+      transform: translateY(-55%) rotate(0deg) scale(1.03);
+    }
+  }
+
+  .slogan {
+    font-size: 1.8rem;
+    max-width: 600px;
+    margin: 1.5rem 0 0 160px; /* Alinhamento com o texto */
+    line-height: 1.4;
+  }
+
+  .tech-badge {
+    margin: 2rem 0 0 160px;
+    font-size: 1.1rem;
+    padding: 0.8rem 2.2rem;
+  }
+
+  .scroll-down-arrow {
+    bottom: 3rem;
+    margin-bottom: 0;
+    font-size: 2.5rem;
+    left: 160px;
+    transform: none;
+    animation: bounce 2s infinite;
+  }
+
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-10px);
+    }
+    60% {
+      transform: translateY(-5px);
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .brand-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Alinhar conteúdo no topo */
+    margin-top: 15%;
+    margin-left: -20%;
+  }
+
+  .logo-gradient {
+    font-size: 6.5rem;
+    margin-top: 5%; /* Reduzir margem superior */
+    transform: scale(1.5); /* Subir 20% */
+    
+  }
+
+  .logo-overlay {
+    margin-left: 62%;
+    margin-top: -20%;
+  
+  }
+
+  @keyframes logo-float {
+    0%, 100% {
+      transform: translate(-50%, -50%) rotate(-4deg) scale(1);
+    }
+    50% {
+      transform: translate(-50%, -55%) rotate(0deg) scale(1.03);
+    }
+  }
+
+  .slogan {
+    margin-left: 17%;
+    font-size: 2rem;
+    max-width: 700px;
+    text-align: center;
+
+
+  }
+
+  .tech-badge {
+    margin-left: 17%;
+    transform: none;
+  }
+
+.scroll-down-arrow {
+  left: 57%;
+  transform: translateX(-50%) translateY(50%); /* Adicionado translateY */
+  position: absolute;
+  bottom: -55%; /* Ajuste este valor conforme necessário */
+  animation: bounce 2s infinite;
+}
+}
+
+/* ======================
    CARDS DE CONTEÚDO
    ====================== */
 .mission-card {
@@ -462,58 +597,73 @@ body {
   }
 }
 
-.indication-card h3 {
-  font-size: 1.6rem;
-  background: linear-gradient(to right, #ffffff, #be00ff);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  margin-bottom: 1rem;
+/* Novos Estilos */
+.indication-steps {
+  margin: 2rem 0;
 }
 
-.highlight {
-  font-size: 1.1rem;
-  color: white;
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
+.step {
+  display: flex;
+  gap: 1.5rem;
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: rgba(190, 0, 255, 0.08);
+  border-radius: 10px;
 }
 
-/* ======================
-   BOTÃO CTA
-   ====================== */
+.step-icon {
+  font-size: 1.8rem;
+  color: #be00ff;
+  min-width: 50px;
+}
+
+
+.counter-label {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 3rem;
+}
+
+.indication-highlights {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.highlight-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(190, 0, 255, 0.05);
+  border-radius: 8px;
+}
 
 .cta-button {
-  display: block; /* Melhor que inline-block para centralização */
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  margin: 2rem auto !important;
+  width: fit-content;
   padding: 12px 28px;
   background: linear-gradient(135deg, #be00ff, #9d00ff);
-  color: white !important;
+  color: white;
   border: none;
   border-radius: 50px;
   font-weight: 600;
   font-size: 1rem;
-  text-align: center;
-  cursor: pointer;
+  text-decoration: none;
   transition: all 0.3s ease;
   box-shadow: 0 4px 12px rgba(190, 0, 255, 0.3);
-  margin: 2rem 5rem; /* Centraliza horizontalmente */
-  width: fit-content; /* Ajusta a largura ao conteúdo */
+}
+.legal-info {
+  margin-top: 1.5rem;
+  text-align: center;
+  opacity: 0.8;
 }
 
-.container-do-botao {
-  display: flex;
-  justify-content: center; /* Centraliza horizontalmente */
-  align-items: center;     /* Centraliza verticalmente (opcional) */
-  width: 100%;
-}
 
-.cta-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(190, 0, 255, 0.4);
-}
-
-.cta-button:active {
-  transform: translateY(1px);
-}
 
 /* ======================
    SELOS DE QUALIDADE
@@ -551,6 +701,155 @@ body {
   color: white;
   font-weight: 500;
   text-align: center;
+}
+
+/* ======================
+   RESPONSIVIDADE - CARDS
+   ====================== */
+
+/* Tablet (768px+) */
+@media (min-width: 768px) {
+  .mission-card {
+    margin-top: 30%;
+    padding: 2rem;
+  }
+
+  .mission-card h2 {
+    font-size: 2.2rem;
+  }
+
+  .mission-text {
+    font-size: 1.1rem;
+  }
+
+  .cta-button {
+    margin: 2rem auto;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+  }
+
+  .badges-container {
+    justify-content: flex-start;
+    gap: 2rem;
+  }
+
+  .quality-badge {
+    width: 140px;
+    height: 140px;
+  }
+
+  .badge-icon {
+    font-size: 2.2rem;
+  }
+
+  .motto {
+    padding: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .motto p {
+    font-size: 1.1rem;
+  }
+}
+
+/* Desktop (1200px+) */
+@media (min-width: 1200px) {
+  .mission-card {
+    margin-top: 20%;
+    padding: 3rem;
+  }
+
+  .mission-card h2 {
+    font-size: 2.5rem;
+  }
+
+  .mission-text {
+    font-size: 1.5rem;
+    line-height: 1.8;
+  }
+
+.cta-button {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  margin: 2rem auto !important;
+  width: fit-content;
+  padding: 12px 28px;
+  background: linear-gradient(135deg, #be00ff, #9d00ff);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(190, 0, 255, 0.3);
+}
+
+  .quality-badge {
+    width: 160px;
+    height: 160px;
+    margin-left: 22%;
+  }
+
+  .badge-icon {
+    font-size: 3rem;
+  
+  }
+
+  .badge-label {
+    font-size: 0.7rem;
+  }
+
+  .pulse-effect {
+    width: 85px;
+    height: 85px;
+    margin-bottom: 2rem;
+  }
+
+  .pulse-effect i {
+    font-size: 2.2rem;
+  }
+
+  .indication-card h3 {
+    font-size: 1.8rem;
+  }
+
+  .highlight {
+    font-size: 1.2rem;
+  }
+
+  .motto {
+    padding: 2rem;
+    border-left-width: 6px;
+  }
+
+  .motto i {
+    font-size: 1.8rem;
+  }
+
+  .motto p {
+    font-size: 1.2rem;
+  }
+}
+
+/* Animação ajustada para desktop */
+@media (min-width: 768px) {
+  @keyframes pulse {
+    0% {
+      transform: scale(0.98);
+      box-shadow: 0 0 0 0 rgba(190, 0, 255, 0.8);
+    }
+    70% {
+      transform: scale(1.1);
+      box-shadow: 0 0 0 25px rgba(190, 0, 255, 0);
+    }
+    100% {
+      transform: scale(0.98);
+      box-shadow: 0 0 0 0 rgba(190, 0, 255, 0);
+    }
+  }
 }
 
 /* ======================
@@ -791,79 +1090,114 @@ body {
   font-size: 0.9rem;
 }
 
-/* Responsivo */
-@media (max-width: 768px) {
+
+
+
+/* ======================
+   EQUIPE - VERSÃO DESKTOP (2 COLUNAS)
+   ====================== */
+@media (min-width: 768px) {
+  .team-section {
+    margin-top: 6rem;
+    padding: 0 2rem;
+  }
+
+  .team-title {
+    font-size: 3rem;
+    margin-bottom: 4rem;
+  }
+
+  .team-members {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Mudado de 4 para 2 colunas */
+    gap: 3rem; /* Aumentado o espaçamento */
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
   .team-member {
-    padding: 1.5rem;
+    max-width: 600px; /* Aumentado o tamanho máximo */
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 650px; /* Altura mínima para uniformidade */
   }
-  
+
   .member-avatar {
-    width: 120px;
-    height: 120px;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 2.5rem;
   }
-  
+
+  .member-photo {
+    border-width: 4px;
+  }
+
   .member-bio {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: auto; /* Empurra o conteúdo para cima */
+  }
+
+  .member-tech {
+    gap: 1.2rem;
+    margin: 2.5rem 0;
+  }
+
+  .tech-pill {
     font-size: 0.9rem;
+    padding: 0.6rem 1.5rem;
+  }
+
+  .member-detail {
+    font-size: 0.95rem;
+    padding-top: 1.5rem;
+  }
+
+  /* Efeito hover mais pronunciado */
+  .team-member:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(190, 0, 255, 0.25);
   }
 }
 
-/* ======================
-   VERSÃO DESKTOP
-   ====================== */
-@media (min-width: 768px) {
-  #inicio {
-    min-height: calc(100vh - 80px);
-    margin-top: 80px;
-    padding: 3rem 0;
-  }
-
-  .hero-grid {
-    grid-template-columns: 1fr 1fr;
+/* Ajustes para telas maiores (1200px+) */
+@media (min-width: 1200px) {
+  .team-members {
     gap: 4rem;
-    align-items: center;
+    max-width: 1600px;
+    margin-bottom: 15%;
   }
 
-  .logo-gradient {
-    font-size: 4.5rem;
+  .team-member {
+    min-height: 700px;
+    padding: 3rem;
   }
 
-  .slogan {
-    font-size: 1.5rem;
+  .member-avatar {
+    width: 220px;
+    height: 220px;
   }
 
-  .mission-card {
-    padding: 2rem;
+  .team-member h4 {
+    font-size: 1.8rem;
   }
 
-  .mission-card h2 {
-    font-size: 2.1rem;
-  }
-
-  .indication-card {
-    padding: 2rem;
-  }
-
-  .pulse-effect {
-    width: 85px;
-    height: 85px;
-  }
-
-  .cta-button {
-    padding: 14px 32px;
+  .member-role {
     font-size: 1.1rem;
   }
 
-  .quality-badge {
-    width: 140px;
-    height: 140px;
+  .member-bio {
+    font-size: 1.15rem;
   }
 }
 
-@media (min-width: 1024px) {
-  .logo-gradient {
-    font-size: 5rem;
-  }
-}
+
+
+
+
+
 /* ================
 == Projetos ==
 ===================*/
